@@ -1,1 +1,12 @@
-pipeline 
+pipeline {
+  agent {
+    docker { image 'python:3.9.18-slim-bullseye' }
+  }
+  stages {
+    stage('Test') {
+      steps {
+        sh 'python --version'
+      }
+    }
+  }
+}
